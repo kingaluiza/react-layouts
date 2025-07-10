@@ -1,15 +1,16 @@
-import React from 'react'
-import Card from './layouts/grid/Card'
-import cards from './layouts/grid/cardData'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import routeMap from './routeMap';
+import CardList from './layouts/grid/CardList';
 
-function App() {
-  return(
-  <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>
-    {cards.map((card, idx) => (
-      <Card key={idx} {...card} />
-    ))}
-  </div>
-  )
+export default function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<CardList />} />
+        {Object.entries(routeMap).map(([path, Component]) => (
+          <Route key={path} path={`/layout/${path}`} element={<Component />} />
+        ))}
+      </Routes>
+    </Router>
+  );
 }
-
-export default App

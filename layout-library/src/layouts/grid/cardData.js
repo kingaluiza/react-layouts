@@ -21,7 +21,8 @@ const cards = [
       image: "",
       title: "bento grid",
       subtitle: "Perfectly organized",
-      description: "A modern office to boost your productivity."
+      description: "A modern office to boost your productivity.",
+      path:"bento"
     },
     {
       image: "",
