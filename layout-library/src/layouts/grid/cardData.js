@@ -34,7 +34,8 @@ const cards = [
       image: "",
       title: "error pages",
       subtitle: "Gracefully helpful",
-      description: "Even when things go wrong, make them right. Provide best user experience even in unexpected moments"
+      description: "Even when things go wrong, make them right. Provide best user experience even in unexpected moments",
+      path:"error"
     }
   ]
   export default cards

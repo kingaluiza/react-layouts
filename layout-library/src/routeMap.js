@@ -1,4 +1,5 @@
 import BentoApp from "./layouts/bento/BentoApp";
+import ErrorApp from "./layouts/error/ErrorApp";
 
 const routeMap = {
     // clean: CleanApp,
@@ -6,7 +7,7 @@ const routeMap = {
     // auth: AuthApp,
     bento: BentoApp,
     // landing: LandingApp,
-    // error: ErrorApp,
+    error: ErrorApp,
 };
 
 export default routeMap;
