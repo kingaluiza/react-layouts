@@ -1,21 +1,26 @@
-import React from "react";
 import Navigation from "./Navigation";
-import ErrorPage from "./ErrorPage";
 import errorPages from "./errorData";
+import "./ErrorApp.css";
 
 function ErrorApp() {
   return (
-    <div className="bg-gray-900 text-white relative scroll-smooth">
+    <div className="relative scroll-smooth">
       <Navigation />
-      <div className="h-screen snap-y snap-mandatory overflow-y-scroll">
-        {errorPages.map((page) => (
-          <ErrorPage
-            key={page.id}
-            id={page.id}
-            title={page.title}
-            description={page.description}
-          />
-        ))}
+      <div className="h-screen snap-y snap-mandatory overflow-y-scroll hide-scrollbar">
+        {errorPages.map((page, idx) => {
+          const PageComponent = page.component;
+          const Icon = page.icon;
+          return (
+            <div key={idx} id={page.id} className="snap-start h-screen">
+              <PageComponent
+                id={page.id}
+                icon={<Icon />}
+                title={page.title}
+                description={page.description}
+              />
+            </div>
+          );
+        })}
       </div>
     </div>
   );
